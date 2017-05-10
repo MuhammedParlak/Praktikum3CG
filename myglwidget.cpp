@@ -36,7 +36,7 @@ void MyGLWidget::initializeGL()
     //vergleich tiefe der pixel mit buffer
     glDepthFunc(GL_LEQUAL);
     //alles gleiche farbe
-    glShadeModel(GL_SMOOTH);
+    glShadeModel(GL_SMOOTH);//Veraltet
     //höchste quali
     glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 
@@ -78,13 +78,13 @@ void MyGLWidget::resizeGL(GLsizei width, GLsizei height)
    glViewport(0, 0, width, height);
 
    // Set projection matrix to a perspective projection
-   glMatrixMode(GL_PROJECTION);
-   glLoadIdentity();
-   //gluPerspective(45.0f, aspect, 0.1, 100.0);
+   glMatrixMode(GL_PROJECTION);//Veraltet
+   glLoadIdentity();//Veraltet
+   //gluPerspective(45.0f, aspect, 0.1, 100.0);//Veraltet
 
    //1.10 Othogonale Pespektiv und Ortogonal
-  //glOrtho(-3,3,-3,3,0.1,100);
-   glFrustum(-0.05, 0.05, -0.05, 0.05, 0.1, 100.0);
+  //glOrtho(-3,3,-3,3,0.1,100);//Veraltet
+   glFrustum(-0.05, 0.05, -0.05, 0.05, 0.1, 100.0);//Veraltet
 }
 
 
@@ -95,20 +95,20 @@ void MyGLWidget::paintGL()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     // Apply model view transformations
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
-    //glTranslatef(0.0f, 0.0f, -7.0f);
-    glTranslatef(xachse,yachse,zoom);
+    glMatrixMode(GL_MODELVIEW);// veraltet
+    glLoadIdentity();//Veraltet
+    //glTranslatef(0.0f, 0.0f, -7.0f);Veraltet
+    glTranslatef(xachse,yachse,zoom);// Veraltet
     // Set color for drawing
-    glColor4f(1.0f, 0.0f, 0.0f, 1.0f);
+    glColor4f(1.0f, 0.0f, 0.0f, 1.0f);// Veraltet
     //1.5 Rotation
-    //glRotatef(45.0,0.0,0.0,1.0);
-     glRotatef(slide,1.0f,1.0f,1.0f);
+    //glRotatef(45.0,0.0,0.0,1.0);// Veraltet
+     glRotatef(slide,1.0f,1.0f,1.0f);//Veraltet
     //1.6 Oberfläche
-    glRotatef(180.0,0.0,1.0,0.0);
+    glRotatef(180.0,0.0,1.0,0.0);//Veraltet
     //1.7 Drehung in y-Richtung
     counter= counter +1;
-    glRotatef(counter,0.0,1.0,0.0);
+    glRotatef(counter,0.0,1.0,0.0);//Veraltet
     // Draw shape
    /* glBegin(GL_TRIANGLES);
         glColor3f(1,0,0);
@@ -126,10 +126,10 @@ void MyGLWidget::paintGL()
     glEnd();
     */
 
-    glBegin(GL_QUADS);
+    glBegin(GL_QUADS);//veraltet
         //TOP_counterclockwise
-        glColor3f(1.0f, 1.0f, 0.0f);//yellow
-        glVertex3f( -1.0f, 1.0f,  -1.0f);//D
+        glColor3f(1.0f, 1.0f, 0.0f);//yellow Veraltet
+        glVertex3f( -1.0f, 1.0f,  -1.0f);//D veraltet
         glColor3f(0.737255f, 0.560784f, 0.560784f);//pink
         glVertex3f( -1.0f, 1.0f,  1.0f);//H
         glColor3f(1.0f, 0.5f, 0.0f);//orange
@@ -186,7 +186,7 @@ void MyGLWidget::paintGL()
         glVertex3f( 1.0f, -1.0f,  1.0f);//F
         glColor3f(0.0f, 1.0f, 1.0f);//cyan
         glVertex3f( -1.0f, -1.0f,  1.0f);//E
-    glEnd();
+    glEnd();//veraltet
 
     // Execute all issued GL commands
    // glFlush(); // replace with glutSwapBuffers() for double buffered mode
