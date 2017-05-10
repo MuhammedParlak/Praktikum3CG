@@ -86,7 +86,7 @@ void MyGLWidget::resizeGL(GLsizei width, GLsizei height)
   //glOrtho(-3,3,-3,3,0.1,100);//Veraltet
    glFrustum(-0.05, 0.05, -0.05, 0.05, 0.1, 100.0);//Veraltet
 }
-
+// Mustafa sagt alles ist gut
 
 // Handler for window draw event
 void MyGLWidget::paintGL()
